@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Practice</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+    <section class="card-group">
+        <article class="card">
+            <h2>Cascade, specificity & inheritance</h2>
+            <p class="cutoff-text">
+                <p>Rules of specificity: highest -> lowest:
+                <ol>
+                    <li>Inline style</li>
+                    <li>ID-attributes</li>
+                    <li>Classes</li>
+                    <li>Elements</li>
+                </ol>
+            </p>
+            <input class="expand-btn" type="checkbox">
+        </article>
+        <article class="card">
+            <h2>Article 2</h2>
+            <p class="cutoff-text">Bing bang bong</p>
+            <input class="expand-btn" type="checkbox">
+        </article>
+        <article class="card">
+            <h2>Article 2</h2>
+            <p class="cutoff-text">Kling klang klong</p>
+            <input class="expand-btn" type="checkbox">
+        </article>
+    <h1 id="language-title">HTML</h1>
+    <div id="practice-field">
+        <h3>Enter a new Question and Answer</h3>
+        <textarea id="question" placeholder="Enter your question here..." rows="4" cols="50"></textarea>
+        <textarea id="answer" placeholder="Enter the answer here..." rows="4" cols="50"></textarea>
+        <button onclick="save()">Save</button>
+        <button onclick="clear()">Clear all</button>
+    </div>
+    <h3>Saved Questions and Answers</h3>
+    <div id="saved-practice"></div>
+
+    <script src="../scripts/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const language = 'HTML'; // Set the language for this page
+            document.getElementById('language-title').textContent = language;
+
+            // Load existing practice data
+            const practiceData = loadPracticeData(language);
+            displayPracticeData(practiceData);
+        });
+
+        function save() {
+            const language = 'HTML'; // Set the language for this page
+            const question = document.getElementById('question').value;
+            const answer = document.getElementById('answer').value;
+            savePractice(language, question, answer);
+            loadAndDisplayPracticeData(language);
+        }
+
+        function clear() {
+            const language = 'HTML'; // Set the language for this page
+            clearPractice(language);
+            loadAndDisplayPracticeData(language);
+        }
+
+        function displayPracticeData(practiceData) {
+            const savedPracticeDiv = document.getElementById('saved-practice');
+            savedPracticeDiv.innerHTML = '';
+
+            practiceData.forEach((item, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.innerHTML = `<strong>Question ${index + 1}:</strong> ${item.question}`;
+
+                const answerDiv = document.createElement('div');
+                answerDiv.innerHTML = `<strong>Answer ${index + 1}:</strong> ${item.answer}`;
+
+                savedPracticeDiv.appendChild(questionDiv);
+                savedPracticeDiv.appendChild(answerDiv);
+                savedPracticeDiv.appendChild(document.createElement('hr'));
+            });
+        }
+
+        function loadAndDisplayPracticeData(language) {
+            const practiceData = loadPracticeData(language);
+            displayPracticeData(practiceData);
+        }
+    </script>
+</body>
+</html>

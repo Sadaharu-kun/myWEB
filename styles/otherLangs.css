@@ -1,0 +1,442 @@
+body {
+    background-color: rgb(43, 190, 43);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+header {
+    background-color: rgb(177, 113, 113);
+    border: 3px solid rgb(240, 130, 66);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 2em;
+    padding: 1em 2em;
+}
+#title {
+    text-align: center;
+    flex-grow: 1;
+}
+.item-link {
+    color: black;
+    text-decoration: none;
+}
+.item img {
+    max-width: 60px; /* Ensure the image fits within its container */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+section {
+    background-color: white;
+    border: 1px solid grey;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+a {
+    padding: 0;
+    text-decoration: none;
+}
+/* grid.asia //
+1x3 -   yue, zh, nan
+1x2 -   ja, ko
+1x2 -   vi, th
+*/
+
+/*   
+G R I D     // EUROPE //
+*/
+
+/*   
+G R I D     // SLAVIC //
+*/
+
+/*   
+G R I D     // EAST //
+*/
+
+
+
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 20px;
+    margin-bottom: 1em;
+}
+.group {        /*  G R I D  */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+    /* repeat(auto-fit, minimax(100px, 1fr)); */
+    /*repeat(3, 1fr);*/
+    /* grid-template-rows: auto; */
+    gap: 10px;
+
+    /* flex-direction: row;
+    border: 1px solid black;
+    background-color: gray;
+    padding: 10px;
+    justify-content: space-evenly; */
+}
+.item {
+    border-radius: 15x;
+    text-align: center;
+    border: 1px solid white; 
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+} 
+
+/*  1x3 GRID  :     Cantonese, Mandarin, Hokkien    */
+    /* YUE */
+.item.yue, 
+.item.zh, 
+.item.nan, 
+.item.vi {
+    display: flex;
+    background-color: red;
+    grid-column: span 1;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    padding: 10px;
+}   
+
+
+.item.zh a, 
+.item.vi a {    /*   Anchor - yellow   */
+    color: yellow;
+}
+.item.yue a,
+.item.th a,
+.item.ru a {    /*   Anchor - white   */
+    color: white;
+}
+
+.item.yue .text {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.item.yue .flex-container {
+    display: flex;
+    align-items: center;
+    color: white;
+    width: fit-content;
+}
+.item.yue .yue-image {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+   
+
+
+/*  2x2 GRID :      Japanese, Korean  */  
+.item-ja a {
+    position: relative;
+    color: yellow; /* Default text color to yellow */
+    z-index: 1; /* Ensure the text is above the star */
+    font-size: 20px; /* Adjust size to match the original text */
+    text-decoration: none; /* Remove underline from the link */
+}
+.item.ja a::after {
+    content: '●';
+    position: absolute;
+    font-size: 80px;
+    left: 108px; /* Center horizontally */
+    top: 427px; /* Center vertically */
+    z-index: 0; /* Ensure the star is below the text */
+}
+.item.ja a .ja-text {
+    color: red; /* Color the 'na' red */
+    z-index: 3; /* Ensure 'na' is above the main text */
+    position: relative; /* Position it normally */
+    left: 3px;
+}
+.item.ja a .pane-text {
+    color: white; /* Color the 'na' red */
+    z-index: 3; /* Ensure 'na' is above the main text */
+    position: relative; /* Position it normally */
+    left: 1px;
+}
+.item.ja a .se-text {
+    color: red; /* Color the 'na' red */
+    z-index: 3; /* Ensure 'na' is above the main text */
+    position: relative; /* Position it normally */
+    left: -2px;
+}
+.item.ja a {
+    color: red;
+}
+
+.item.ja, .item.ko {
+    background-color: white;
+}
+    /*  Korean */
+.item.ja,
+.item.ko {
+    background: white;
+}
+
+.item.ja,
+.item.ko, 
+.item.vi, 
+.item.th {
+    justify-self: center;
+    align-self: center; 
+}
+
+
+
+.item.vi {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+#item-vi {
+    position: relative;
+    background-color: red; /* Red background for the box */
+    display: inline-block; /* Ensure the box only takes up as much space as needed */
+    padding: 10px; /* Adjust padding as needed */
+}
+#item-vi a {
+    position: relative;
+    color: yellow; /* Default text color to yellow */
+    z-index: 1; /* Ensure the text is above the star */
+    font-size: 20px; /* Adjust size to match the original text */
+    text-decoration: none; /* Remove underline from the link */
+}
+#item-vi a::after {
+    content: ' ★'; /* Unicode star character */
+    color: yellow; /* Color of the star */
+    font-size: 40px; /* Adjust size as needed */
+    position: absolute; /* Position relative to the parent element */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    z-index: 0; /* Ensure the star is below the text */
+}
+#item-vi a .viet-text {
+    color: yellow; /* Color the letters 'Viet' yellow */
+    z-index: 2; /* Ensure 'Viet' is above the main text */
+    white-space: nowrap; /* Prevent text wrapping */
+    position: relative;
+    left: 7px; /* Adjust this value to move 'Viet' */
+}
+#item-vi a .na-text {
+    color: red; /* Color the 'na' red */
+    z-index: 3; /* Ensure 'na' is above the main text */
+    position: relative; /* Position it normally */
+    left: 3px; /* Adjust this value to move 'na' */
+}
+#item-vi a .mese-text {
+    color: yellow; /* Color the letters 'mese' yellow */
+    z-index: 2; /* Ensure 'mese' is above the main text */
+    white-space: nowrap; /* Prevent text wrapping */
+    position: relative;
+    left: -1px; /* Adjust this value to move 'mese' */
+}
+    /* Thai */
+.item.th {
+    background-color: white
+}
+.item.th {
+    background: linear-gradient(to bottom, red 0%, red 16.66%, white 16.66%, white 33.33%, blue 33.33%, blue 66.66%, white 66.66%, white 83.33%, red 83.33%, red 100%);
+}
+.item.th {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+
+
+#asia .group {
+    grid-template-areas:
+    "zh yue nan"
+    "ja ko"
+    "th vi";
+}
+
+/*  SLAVIC   */
+#slavic {
+    border: 2px solid blue;
+    background-color: skyblue;
+    border-radius: 10px;
+
+}
+    /* Russian */
+.item.ru {
+    background: linear-gradient(to bottom, white 0%, white 33.33%, blue 33.33%, blue 66.66%, red 66.66%, red 100%); 
+}   
+    /* Polish */
+.item.pl {
+    background: linear-gradient(to bottom, white 0%, white 50%, red 50%, red 100%);
+}
+.item.pl a {
+    color: black;
+}
+    /* Kroatian */
+.item.hr {
+    background: linear-gradient(to bottom, red 0%, red 33.33%, white 33.33%, white 66.66%, blue 66.66%, blue 100%);
+}
+
+    /* EUROPE */
+
+    /* Spanish */
+.item.sp {
+    background: linear-gradient(to bottom, red 20%, yellow 20%, yellow 80%, red 80%);
+    border-color: transparent;
+}
+    /* Portuguese */
+.item.pt {
+    background: linear-gradient(to right, green 33.33%, red 33.33%); 
+    position: relative;
+    /* overflow: hidden; Hide overflow for the rhombus */
+}
+    /* French */
+.item.fr {
+    background: linear-gradient(to right, blue 33.33%, white 33.33%, white 66.66%, red 66.66%);
+}
+    /* Italian */
+.item.it {
+    background: linear-gradient(to right, green 33.33%, white 33.33%, white 66.66%, red 66.66%);
+    text: white;
+}
+    /* Romanian */
+.item.ro {
+    background: linear-gradient(to right, blue 33.33%, yellow 33.33%, yellow 66.66%, red 66.66%);
+}
+    /* Greek */
+.item.el {
+    /* background: linear-gradient(to bottom, blue 12.5%, white 12.5%, white 12.5%, white 25%, blue 25%, blue 37.5%, white 37.5%, white 50%, blue 50%, blue 62.5%, white 62.5%, white 75%, blue 75%, blue 87.5%, white 87.5%, white 100%); */
+    background: linear-gradient(to top, blue 11.11%, white 11.11%, white 22.22%, blue 22.22%, blue 33.33%, white 33.33%, white 44.44%, blue 44.44%, blue 55.55%, white 55.55%, white 66.66%, blue 66.66%, blue 77.77%, white 77.77%, white 88.88%, blue 88.88%, blue 88.88%, blue 100%) top left / 50% 100%, blue;
+}
+
+/*      Background_Color    */
+
+
+
+
+
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.item.item-2 .yellow-rhombus {
+    position: relative;
+    top: 50%
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    background: yellow;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* #europe { */
+    border: 5px solid rgb(229, 182, 29);
+    background-color: rgb(19, 185, 214);
+    border-radius: 10px;
+    padding: 20px;
+}
+/* #asia { */
+    border: 2px solid rgba(255, 91, 91, 0.881);
+    background-color: rgba(251, 251, 93, 0.862);
+    border-radius: 10px;
+    padding: 20px; /* just outside flags and border */
+}
+/* #asia .group { */
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+
+}
+/* #asia .group .item { */
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+
+/* #asia .item.ja, .item.ko { */
+    grid-column: span 1;
+    padding: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+/* IMAGES */
+#Logo-img {
+    order: 3; /* Ensure image comes last */
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+    border: 4px solid #ccc;
+    margin-left: 10px; /* Adds space to the left of the image */
+}
+
+
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+th, td {
+    border: 1px solid rgb(212, 212, 212);
+    padding: 8px;
+    text-align: left;
+}
+td {
+    vertical-align: top;
+}
+
+.table-heading {
+    background-color: rgb(150, 219, 150);
+    padding: 0;
+    padding-left: 30px;
+    border-radius: 10px 10px 0 0;
+}
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+tbody + tbody {
+    position: relative;
+}
+tbody + tbody::before {
+    content: "";
+    display: block;
+    height: 1em; /* Adjust the spacing height as needed */
+    width: 100%;
+
+}

@@ -1,0 +1,96 @@
+body {
+    background-color: rgb(92, 196, 109);
+}
+
+header {
+    background-color: rgb(156, 151, 151);
+    border: 3px solid rgb(255, 238, 0);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 2em;
+    color: white;
+}
+
+#title {
+    order: 1; /* Ensure title comes first */
+    text-align: center;
+}
+
+#list {
+    order: 2; /* Ensure list comes second */
+    flex-grow: 1; /* Allow list to take remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#list ul {
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
+}
+#list ul li {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+#python-img {
+    order: 3; /* Ensure image comes last */
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+    border: 3px solid #0ce7ff;
+    margin-left: 10px; /* Adds space to the left of the image */
+}
+
+
+
+section {
+    background-color: white;
+    border: 1px solid grey;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+th, td {
+    border: 1px solid rgb(212, 212, 212);
+    padding: 8px;
+    text-align: left;
+}
+td {
+    vertical-align: top;
+}
+
+.table-heading {
+    background-color: rgb(255, 238, 0);
+    padding: 0;
+    padding-left: 30px;
+    border-radius: 10px 10px 0 0;
+}
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+tbody + tbody {
+    position: relative;
+}
+tbody + tbody::before {
+    content: "";
+    display: block;
+    height: 1em; /* Adjust the spacing height as needed */
+    width: 100%;
+}

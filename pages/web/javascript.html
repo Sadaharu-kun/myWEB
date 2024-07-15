@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Practice</title>
+    <link rel="stylesheet" href="JS.css">
+    <style>
+        /* .correct-answer {
+            border: 2px solid green;
+            padding: 10px;
+            margin-bottom: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>Basic Elements
+            <!-- <li>Syntax & semantics: [Varibles, Data types, Operators]</li> -->
+            <li>Conditional structures [Conditionals, Loops, Breaks/continue]</li>
+            <li>Functions & methods</li>
+        </ul>
+        <ul>Intermediate concepts
+            <li>Data structures:
+                <ul>
+                    <li>Arrays</li>
+                    <li>Lists</li>
+                    <li>Stacks</li>
+                    <li>Queues</li>
+                    <li>Sets</li>
+                    <li>Hash Tables (Dictionary/Maps)</li>
+                    <li>Linked lists</li>
+                    <li>Trees and graphs (basic understanding)</li>
+                </ul>
+            </li>
+            <!-- <li>Object-oriented programming
+                <ul>
+                    <li>Classes & objects</li>
+                    <li>Inheritance</li>
+                    <li>Polymorphism</li>
+                    <li>Encapsulation</li>
+                    <li>Abstraction</li>
+                    <li>Interfaces and abstract classes</li>
+                </ul>
+            </li>
+            <li>Error handling
+                <ul>
+                    <li>Exception handling (try, catch, finally)</li>
+                    <li>Custom exceptions</li>
+                </ul>
+            </li>
+        </ul>
+        <ul>Advanced concepts
+            <ul>Advanced data structures
+                <li>Heaps</li>
+                <li>AVL trees</li>
+                <li>Graph Algorithms (DFS, BFS, Djikstra's algorythm)</li>
+                <li>Dynamic programming</li>
+            </ul>
+            <ul>Memory management
+                <ul>
+                    <li>Pointers and references (for C/C++)</li>
+                    <li>Manual memory management</li>
+                    <li>Garbage collection</li>
+                </ul>
+            </ul>
+            <ul>File I/O
+                <ul>
+                    <li>Reading from and writing files</li>
+                    <li>Working with different file formats (CSV, JSON, XML)</li>
+                </ul>
+            </ul>
+
+            <UL>Practical skills</UL>
+            <ul>testing and debugging</ul>
+            <ul>Software development best practices</ul>
+            <ul>Networking basis</ul>
+            <UL>Specialised topics:</UL>
+            <ul>Web development</ul>
+            <ul>Mobile development</ul>
+            <ul>Game development</ul>
+            <ul>Cybersecurity</ul>
+            <ul>Machine learning and data science</ul>
+        </ul> -->
+    </nav>
+    <div class="card-group-syntax_semantics">
+        <article class="card">
+            <h2>Variables</h2>
+            <div class="cutoff-text">
+                <li>let : is flexible (block-scoped)</li>
+                <li>const : is not flexible (block-scoped)</li>
+                <li>var : is flexible, but since its accessable throughout the entire function where its declared, it can lead to unexpected behaviours and bugs if used within blocks like loops or if-statements (function scoped!!)</li>
+                <!-- var: dont use button instead of text (why?) -->
+            </div>
+            <input class="expand-btn" type="checkbox">
+        </article>
+        <article class="card">
+            <h2>Data types</h2>
+            <div class="cutoff-text">Primitive:
+                <li>Number
+                    <p>Represents both <strong>integers</strong> and <strong>decimals</strong></p>
+                </li>
+                <li>String
+                    <p>Represents a <strong>sequence</strong> of <strong>characters</strong></p>
+                </li>
+                <li>Boolean
+                    <p>Represents <strong>true</strong> or <strong>false</strong> values</p>
+                </li>
+                <li>Undefined
+                    <p>Represents an <strong>uninitialised  variable</strong></p>
+                </li>
+                <li>Null
+                    <p>Represents an <strong>intentional absence</strong> of any object value</p>
+                </li>
+                <li>Symbol
+                    <p>Represents a <strong>unique</strong> and <strong>immutable value</strong> (ES6)?</p>
+                </li>
+                <li>BigInt
+                    <p>Represents whole numbers larger than 2^53 - 1?</p>
+                </li>
+            </div>
+            <input class="expand-btn" type="checkbox">
+       
+        </article>
+        <article class="card">
+            <h2>Operators</h2>
+            <div class="cutoff-text">
+                <div class="cutoff-text">Arithmetic:
+                    <li>+</li>
+                    <li>-</li>
+                    <li>*</li>
+                    <li>/</li>
+                    <li>% modulus/remainder</li>
+                    <li>** exponentation</li>
+                    <p>example:
+    <pre><code>
+    let product = 4 * 2;    // = 8
+    let quotient = 18 / 2;  // = 9
+    
+    let remainder = 10 % 3; 
+    // = 1 (10/3 quotient is 3,
+    and remainder is 1 [10 = 3*3 + 1])
+    
+    let power = 2 ** 3;     // (2*2*2) = 8
+    </code></pre>
+                    </p>
+                </div>    
+                <input class="expand-btn" type="checkbox">
+    
+                <div class="cutoff-text">Comparison operators:
+                    <li>==
+                        <p>Equal to</p>
+                    </li>
+                    <li>===
+                        <p>Strictly equal to</p>
+                    </li>
+                    <li>!=
+                        Not equal to
+                    </li>
+                    <li>!==
+                        <p>Strictly not equal to</p>
+                    </li>
+                    <li>>
+                        <p>Greater than</p>
+                    </li>
+                    <li>>=
+                        <p>Greater than or equal to</p>
+                    </li>
+                    <li><
+                        <p>Less than</p>
+                    </li>
+                    <li><=
+                        <p>Less than or equal to</p>
+                    </li>
+    
+                </div>
+                <input class="expand-btn" type="checkbox">
+                
+                <div class="cutoff-text">Logical Operators:
+                    <li>&& : Logical AND</li>
+                    <li>|| : Logical OR</li>
+                    <li>!  : Logical NOT</li>
+                </div>
+                <input class="expand-btn" type="checkbox">
+            </div>
+            <input class="expand-btn" type="checkbox">
+        </article>
+    </div>
+
+
+
+    <div class="card-group-control_structures">
+        <article class="card">
+            <h2>Conditional statements</h2>
+            <div class="cutoff-text">
+                <li>if</li>
+                <li>else</li>
+                <li>else if</li>
+                <li>switch/case</li>
+            </div>
+            <input class="expand-btn" type="checkbox">
+        </article>
+        <article class="card">
+            <h2>Loops</h2>
+            <div class="cutoff-text">
+                <li>for</li>
+                <li>while</li>
+                <li>do-while</li>
+            </div>
+            <input class="expand-btn" type="checkbox">
+        </article>
+        <article class="card">
+            <h2>Break and continue</h2>
+            <div class="cutoff-text">
+                <li>Break and continue</li>
+            </div>
+            <input class="expand-btn" type="checkbox">
+        </article>
+    </div>
+
+
+<!-- 
+    <h1 id="language-title">JavaScript</h1>
+    <div id="practice-field">
+        <h3>Enter a new Question and Answer</h3>
+        <textarea id="question" placeholder="Enter your question here..." rows="4" cols="50"></textarea>
+        <textarea id="answer" placeholder="Enter the answer here..." rows="4" cols="50"></textarea>
+        <button onclick="save()">Save</button>
+        <button onclick="clear()">Clear all</button>
+    </div>
+    <h3>Saved Questions and Answers</h3>
+    <div id="saved-practice"></div>
+
+    <h3>Practice</h3>
+    <button onclick="practice()">Practice</button>
+    <div id="practice-section" style="display: none;">
+        <div id="answer-box"></div>
+        <p id="random-question"></p>
+        <textarea id="user-answer" placeholder="Enter your answer here..." rows="4" cols="50"></textarea>
+        <button onclick="checkAnswer()">Check Answer</button>
+        <p id="answer-result"></p>
+    </div>
+
+    <script src="../scripts/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const language = 'JavaScript'; // Set the language for this page
+            document.getElementById('language-title').textContent = language;
+
+            // Load existing practice data
+            const practiceData = loadPracticeData(language);
+            displayPracticeData(practiceData);
+        });
+
+        function save() {
+            const language = 'JavaScript'; // Set the language for this page
+            const question = document.getElementById('question').value;
+            const answer = document.getElementById('answer').value;
+            savePractice(language, question, answer);
+            loadAndDisplayPracticeData(language);
+        }
+
+        function clear() {
+            const language = 'JavaScript'; // Set the language for this page
+            clearPractice(language);
+            loadAndDisplayPracticeData(language);
+        }
+
+        function displayPracticeData(practiceData) {
+            const savedPracticeDiv = document.getElementById('saved-practice');
+            savedPracticeDiv.innerHTML = '';
+
+            practiceData.forEach((item, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.innerHTML = `<strong>Question ${index + 1}:</strong> ${item.question}`;
+
+                const answerDiv = document.createElement('div');
+                answerDiv.innerHTML = `<strong>Answer ${index + 1}:</strong> ${item.answer}`;
+
+                savedPracticeDiv.appendChild(questionDiv);
+                savedPracticeDiv.appendChild(answerDiv);
+                savedPracticeDiv.appendChild(document.createElement('hr'));
+            });
+        }
+
+        function loadAndDisplayPracticeData(language) {
+            const practiceData = loadPracticeData(language);
+            displayPracticeData(practiceData);
+        }
+
+        function practice() {
+            const language = 'JavaScript'; // Set the language for this page
+            const practiceData = loadPracticeData(language);
+
+            if (practiceData.length === 0) {
+                alert('No practice data available.');
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * practiceData.length);
+            const randomQuestion = practiceData[randomIndex].question;
+
+            document.getElementById('random-question').textContent = randomQuestion;
+            document.getElementById('user-answer').value = ''; // Clear previous answer
+            document.getElementById('answer-result').textContent = ''; // Clear previous result
+            document.getElementById('practice-section').style.display = 'block';
+        }
+
+        function checkAnswer() {
+            const language = 'JavaScript'; // Set the language for this page
+            const userAnswer = document.getElementById('user-answer').value.trim().toLowerCase();
+            const practiceData = loadPracticeData(language);
+            const currentQuestion = document.getElementById('random-question').textContent;
+
+            const questionData = practiceData.find(item => item.question === currentQuestion);
+
+            if (questionData) {
+                const correctAnswer = questionData.answer.trim().toLowerCase();
+                if (userAnswer === correctAnswer) {
+                    const answerBox = document.getElementById('answer-box');
+                    const answerDisplay = document.createElement('div');
+                    answerDisplay.classList.add('correct-answer');
+                    answerDisplay.innerHTML = `<strong>Question:</strong> ${currentQuestion}<br><strong>Answer:</strong> ${correctAnswer}`;
+                    answerBox.appendChild(answerDisplay);
+
+                    // Remove the question from practiceData
+                    practiceData.splice(practiceData.indexOf(questionData), 1);
+
+                    // Update localStorage with modified practiceData
+                    localStorage.setItem('practiceData', JSON.stringify(practiceData));
+
+                    // Display next question or finish practice
+                    if (practiceData.length > 0) {
+                        practice(); // Show next question
+                    } else {
+                        document.getElementById('random-question').textContent = '';
+                        document.getElementById('practice-section').style.display = 'none';
+                        alert('You have practiced all questions!');
+                    }
+                } else {
+                    document.getElementById('answer-result').textContent = 'Incorrect. Try again.';
+                }
+            } else {
+                document.getElementById('answer-result').textContent = 'No question to check.';
+            }
+        }
+    </script> -->
+</body>
+</html>

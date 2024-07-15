@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A JavaScript</title>
+    <link rel="stylesheet" href="../styles/JavaScript.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Glossary</h1>
+    </header>
+    <main>
+        <section id="input-section">
+            <h2>Add Question and Answer:</h2>
+            <div id="input-container">
+                <div>
+                    <label for="question">Question:</label>
+                    <input type="text" id="question" placeholder="Enter your question">
+                </div>
+                <div>
+                    <label for="answer">Answer:</label>
+                    <input type="text" id="answer" placeholder="Enter your answer">
+                </div>
+            </div>
+            <button onclick="saveQA()">Save</button>
+        </section>
+        <section id="qa-section">
+            <h2>Saved Questions and Answers</h2>
+            <table id="qa-table">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="qa-list"></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="../scripts/JavaScript.js"></script>
+</body>
+</html>

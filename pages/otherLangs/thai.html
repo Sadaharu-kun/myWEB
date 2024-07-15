@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-with, initial-scale-1.0">
+    <title>Thai</title>
+    <!-- <link rel="stylesheet" href="japanese.css"> -->
+     <style>
+        #menu {
+            background-color: red;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        #menu h1 {
+            text-align: center;
+            border: 3px solid white;
+            border-radius: 10px;            
+            margin: 0;
+            padding: 5px 10px;
+        }
+        table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+th, td {
+    border: 1px solid rgb(212, 212, 212);
+    padding: 8px;
+    text-align: left;
+}
+td {
+    vertical-align: top;
+}
+
+.table-heading {
+    background-color: rgb(255, 238, 0);
+    padding: 0;
+    padding-left: 30px;
+    border-radius: 10px 10px 0 0;
+}
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+tbody + tbody {
+    position: relative;
+}
+tbody + tbody::before {
+    content: "";
+    display: block;
+    height: 1em; /* Adjust the spacing height as needed */
+    width: 100%;
+}
+
+
+     </style>
+</head>
+<body>
+    <!-- <div id="flag"> </div>       -->
+    <nav id="menu">
+        <h1>Thai</h1>
+        <h2>Script</h2>
+        <h3>Tones</h3>
+        <ul>
+            <li>Phrases</li>
+            <ol>Time questions</ol>
+            <ol>Days of the week</ol>
+            <ol>Counting</ol>
+            <ol>Duolingo</ol>
+            <li>Scripture</li>
+            <li>Conjugation practice</li>
+        </ul>
+    </nav>
+    <h1>Script graph + example</h1>
+        <table id="script">
+            <thead>
+                <tr>
+                    <th>initial</th>
+                    <th>Symbol</th>
+                    <th>final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>k</td>
+                    <td>ก</td>
+                    <td>k</td>
+                </tr>
+                <tr>
+                    <td>kh</td>
+                    <td>ข</td>
+                    <td>k</td>
+                </tr>
+                <tr>
+                    <td>kh</td>
+                    <td>ฃ</td>
+                    <td>k</td>
+                </tr>
+                <tr>
+                    <td>kh</td>
+                    <td>ค</td>
+                    <td>k</td>
+                </tr>
+                <tr>
+                    <td>kh</td>
+                    <td>ฅ</td>
+                    <td>k</td>
+                </tr>
+                <tr>
+                    <td>kh</td>
+                    <td>ฆ</td>
+                    <td>k</td>
+                </tr>
+                <tr>
+                    <td>ng</td>
+                    <td>ง</td>
+                    <td>ng</td>
+                </tr>
+                <tr>
+                    <td>ct</td>
+                    <td>จ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>ct</td>
+                    <td>ฉ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>ct</td>
+                    <td>ช</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td>ซ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>ch</td>
+                    <td>ฌ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>y</td>
+                    <td>ญ</td>
+                    <td>n</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td>ฎ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>t</td>
+                    <td>ฏ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>th</td>
+                    <td>ฐ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>th/d</td>
+                    <td>ฑ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>th</td>
+                    <td>ฒ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>n</td>
+                    <td>ณ</td>
+                    <td>n</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td>ด</td>
+                    <td>n</td>
+                </tr>
+                <tr>
+                    <td>t</td>
+                    <td>ต</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>th</td>
+                    <td>ถ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>th</td>
+                    <td>ท</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>th</td>
+                    <td>ธ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>n</td>
+                    <td>น</td>
+                    <td>n</td>
+                </tr>
+                <tr>
+                    <td>b</td>
+                    <td>บ</td>
+                    <td>p</td>
+                </tr>
+                <tr>
+                    <td>p</td>
+                    <td>ป</td>
+                    <td>p</td>
+                </tr>
+                <tr>
+                    <td>ph</td>
+                    <td>ผ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>f</td>
+                    <td>ฝ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>ph</td>
+                    <td>พ</td>
+                    <td>p</td>
+                </tr>
+                <tr>
+                    <td>f</td>
+                    <td>ฟ</td>
+                    <td>p</td>
+                </tr>
+                <tr>
+                    <td>ph</td>
+                    <td>ภ</td>
+                    <td>p</td>
+                </tr>
+                <tr>
+                    <td>m</td>
+                    <td>ม</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>y</td>
+                    <td>ย</td>
+                    <td>- / n</td>
+                </tr>
+                <tr>
+                    <td>r</td>
+                    <td>ร</td>
+                    <td>n</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td>ล</td>
+                    <td>n</td>
+                </tr>
+                <tr>
+                    <td>w</td>
+                    <td>ว</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td>ศ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td>ษ</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td>ส</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>h</td>
+                    <td>ห</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td>ฬ</td>
+                    <td>n</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>อ</td>
+                    <td>'throat upside down?'</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>vowels short and long</h1>
+        <h1>class and tones</h1>
+        <div class="container">
+            <h1>Phrases</h1>
+            <h3>Time question</h3>
+                <ul>
+                    <li>every day</li>
+                    <li>overmorrow</li>
+                    <li>tomorrow</li>
+                    <li>today</li>
+                    <li>yesterday</li>
+                    <li>day before yesterday</li>
+                </ul>
+            <h3>Days of the week</h3>
+            <h3>Counting</h3>
+            <h3>Duolingo</h3>
+        </div>
+        <div class="container">
+            <h1></h1>
+            <ul>
+                <li>every day</li>
+                <li>overmorrow</li>
+                <li>tomorrow</li>
+                <li>today</li>
+                <li>yesterday</li>
+                <li>day before yesterday</li>
+            </ul>
+        </div>
+
+
+    <div class="container" id="dayMonth">
+        <div class="group">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>day</th>
+                            <th>漢字</th>
+                            <th>平仮名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>１st</td>
+                            <td>一日</td>
+                            <td>ついたち</td>
+                        </tr>
+                        <tr>
+                            <td>2nd</td>
+                            <td>二日</td>
+                            <td>ふつか</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="minuteName">
+        <div class="group">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Minute</th>
+                            <th>漢字</th>
+                            <th>平仮名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 min</td>
+                            <td>一分</td>
+                            <td>いっぷん</td>
+                        </tr>
+                        <tr>
+                            <td>2 min</td>
+                            <td>二分</td>
+                            <td>にふん</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- <script src=""></script> -->
+</body>
+</html>

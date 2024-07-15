@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Basics</title>
+    <link rel="stylesheet" href="../../styles/CSS.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">CSS Basics</h1>
+        <nav id="list">
+            <ul >
+                <li><a href="#section1">Current project: ?</a></li>
+                <li><a href="#section2">Basic info</a></li>
+                <li><a href="#section3">Properties:</a></li>
+            </ul>
+        </nav>
+        <img src="../images/JavaLogo.webp" alt="JavaLogo" id="Logo-img">
+    </header>
+    
+    <main>
+        <section class="card-group">
+            <article class="card">
+                <h2>Cascade, specificity & inheritance</h2>
+                <p class="cutoff-text">
+                    <p>Rules of specificity: highest -> lowest:
+                    <ol>
+                        <li>Inline style</li>
+                        <li>ID-attributes</li>
+                        <li>Classes</li>
+                        <li>Elements</li>
+                    </ol>
+                </p>
+                <input class="expand-btn" type="checkbox">
+            </article>
+            <article class="card">
+                <h2>Article 2</h2>
+                <p class="cutoff-text">Bing bang bong</p>
+                <input class="expand-btn" type="checkbox">
+            </article>
+            <article class="card">
+                <h2>Article 2</h2>
+                <p class="cutoff-text">Kling klang klong</p>
+                <input class="expand-btn" type="checkbox">
+            </article>
+            <p>inheritance:
+            <br>some elements inherit the styles of their parent, but others doesnt.</p>
+            <p>editing elements: pixel values or relative units related to their parent element. or percentage of viewport.</p>
+            <p>tools: flex layout & grid to control elements in a sofisticated way in a box. </p>
+            <p>pseudo-selectors: like hover over button.</p>
+            <p>Can add logic to code by using variables
+                <pre><code>
+                    :root {
+                        --blue#76568765;
+                    }
+                    button:hover {
+                        background: var(--blue);
+                    }
+                </code></pre>
+            </p>
+            <p>Conditional logic
+                (based on size of device)
+                <pre><code>
+                    @media screen and (min-width: 480px) {
+                        article {
+                            color: orange;
+                        }
+                    }
+                </code></pre>
+            </p>
+            <p>Handling complex animations</p>
+            <pre><code>
+                p {
+                    animation-duration: 3s;
+                    animation-name: slidein;
+                }
+
+                @keyframes slidein {
+                    from {
+                        margin-left: 100%;
+                        width: 300%;
+                    }
+
+                    to {
+                        margin-left: 0%;
+                        width: 100%;
+                    }
+                }
+            </code></pre>
+
+        </section>
+
+        <section id="section1.1">
+            <h2>Flexbox:</h2>
+            <ol>
+                <li>Start with a container, like div. And give it the property flex ('display: flex;') </li>
+                <p>flex-container has control over how it's children are layed out</p>
+                <p>Changing the item width to 100% (the div container) the flexible container displays items evenly across main axis.
+                    by targeting items flex property (.purple-item { flex: 2; } now takes up 50% instead of 1/3 ) </p>
+                    <p>x axis: (justify-content: flex-start/-end/center/space-evenly/around)</p>
+                    <p>y axis: (align items) + (justify-content: '-:-')</p>
+                    <p>flex-direction: column -> x and y axis switches place! (works the same but tilt head sideways)</p>
+
+            </ol>
+
+            <p>display: flex;<br>
+            flex-wrap: nowrap; // items inside container<br>
+            // : wrap // items placed out. If not fit? One step down</p>
+        </section>
+        <pre><code>
+            <main>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>class="four"></div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+            </main>
+            main {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                gap: 20px;
+            }
+            .four {
+                background: white;
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+        </code></pre>
+
+        <h3>CSS variables video: Fireship, youtube</h3>
+
+        <section id="section2">
+            <h2>Basic info:</h2>
+            <p>How to apply it:</p>
+            <p>CSS in hacking? (ex. disrupting how document is viewed)</p>
+        </section>
+
+        <section id="section3">
+            <h2>Properties</h2>
+            <table>
+                <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 70%;">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="table-heading"><strong>Color Properties:</strong></th>
+                    </tr>
+                    <tr>
+                        <td>color:</td>
+                        <td>Sets the text color</td>
+                    </tr>
+                    <tr>
+                        <td>background-color:</td>
+                        <td>Sets the background color</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="table-heading"><strong>Text Properties:</strong></th>
+                    </tr>
+                    <tr>
+                        <td>font-size:</td>
+                        <td>Sets the size of the font</td>
+                    </tr>
+                    <tr>
+                        <td>font-weight:</td>
+                        <td>Sets the weight (boldness) of the font</td>
+                    </tr>
+                    <tr>
+                        <td>text-align:<br><li>center, left, right</li></i></td>
+                        <td>Sets the horizontal alignment of the text</td>
+                    </tr>
+                    <tr>
+                        <td>border-radius:<br><li>10px 10px 0 0;</li></td>
+                        <td>Sets top corners to rounded edges</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="table-heading"><strong>Box & Border Properties:</strong></th>
+                    </tr>
+                    <tr>
+                        <td>border-radius:<br><li>10px 10px 0 0;</li></td>
+                        <td>Sets top corners to rounded edges</td>
+                    </tr>
+                    <tr>
+                        <td>padding:<br><li>0; 10px;</li></td>
+                        <td>Adds spacing on the walls inside 'textbox'</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

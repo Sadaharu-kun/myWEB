@@ -1,0 +1,206 @@
+body {
+    background-color: rgb(43, 190, 43);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    background-color: rgb(177, 113, 113);
+    border: 3px solid rgb(240, 130, 66);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /*Distribute items evenly*/
+    align-items: center; /*Center items vertically*/
+    margin-bottom: 2em;
+    padding: 1em 2em;
+}
+#title {
+    text-align: center;
+    flex-grow: 1;
+} 
+
+.container {
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 30px;
+    margin-bottom: 1em;
+}
+.group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border-radius: 10px;
+}
+.item {
+    border-radius: 15x;
+    text-align: center;
+    border: 1px solid white; 
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.item a {
+    color: white;
+    text-decoration-line: none;
+}
+
+
+
+#individual {
+    border: 5px solid purple;
+    background-color: rgb(218, 49, 218);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.item.java {
+    background-color: rgb(250, 46, 250);;
+    border: 5px solid pink;
+    padding: 20px;
+}
+.item.java a {
+    color: white; 
+}
+
+.item.python {
+    background-color: rgb(72, 223, 72);
+    border: 5px solid green;
+}
+.item.python a {
+    color: green;
+}
+.item.swift {
+    background-color: orange;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+#web {
+    border: 5px solid blue;
+    background-color: skyblue;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.item.js {
+    background-color: orange;
+    padding: 20px;
+}
+.item.html,
+.item.css {
+    background-color: blue;
+}
+
+#bash {
+    background: skyblue;
+}
+.item.bash, 
+.item.power,
+.item.sql {
+    background: blue;
+    border: 5px solid white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#C {
+    border: 5px solid purple;
+    background-color: rgb(218, 49, 218);
+    border-radius: 10px;
+    padding: 20px;
+}
+img {
+    height: 100px;
+    width: 100px;
+}
+
+
+.in-1 {
+    background-color: purple;
+}
+.in-1 a,
+.in-2 a,
+.in-3 a {
+    color: white;
+    text-decoration: none;
+}
+
+.in-2 {
+    background-color: green;
+}
+
+
+
+.html {
+    border: 1px solid black;
+    background-color: skyblue;
+}
+.css {
+    border: 1px solid black;
+    background-color: blue;
+
+}
+
+
+
+
+
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    align-items: flex-start;
+}
+.card {
+    background: whitesmoke;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: .25em;
+}
+
+
+.cutoff-text {
+    --max-lines: 1;
+    --line-height: 1.4;
+
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+    
+    overflow: hidden;
+    position: relative;
+    /* display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines); */
+}
+.cutoff-text:has(+ .expand-btn:not(:checked)):before {
+    content: "";
+    position: absolute;
+    height: calc(1em * var(--line-height));
+    width: 100%;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, white);
+}
+
+.expand-btn {
+    appearance: none;
+    border: 1px solid black;
+    padding: .5em;
+    border-radius: .25em;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.expand-btn:hover {
+    background-color: #CCC;
+}
+.expand-btn::before {
+    content: "Expand";
+}
+.expand-btn:checked::before {
+    content: "Collapse";
+}
+
+.cutoff-text:has(+ .expand-btn:checked) {
+    max-height: none;
+}

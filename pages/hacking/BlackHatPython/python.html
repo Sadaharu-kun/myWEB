@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Hat Python</title>
+    <link rel="stylesheet" href="python.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Python Basics</h1>
+        <nav id="list">
+            <ul>
+                <li><a href="#section1">Basic info (environment)</a></li>
+                <li><a href="#section2">Basic elements</a></li>
+                <li><a href="#section3">Control structures</a></li>
+                <li><a href="#section4">Functions/Methods</a></li>
+                <li><a href="#section5">Data structures</a></li>
+            </ul>
+        </nav>
+        <img src="../images/python-logo.png" alt="python-logo" id="python-img">
+        <!-- insert image of snake -->
+    </header>
+    
+    <main>
+        <h2>Black Hat Python:</h2>
+        <section id="card-group">
+            <article class="card">
+                <div class="cutoff-text">Vocabulary
+                    defacing websites,
+                    exploitation library/framework (CANVAS,
+                    CAN message injection onto automotive networks, 
+                    metasploit, more obscure tools(PyEmu/Sully)), 
+                    fuzzers, 
+                    proxies, 
+                    reverse engineering, ruby
+                </div>
+                <input class="expand-btn" type="checkbox">
+            </article>
+        </section>
+        <section id="card-group">
+            <article class="card">
+                <div class="cutoff-text">1. Environment setup
+                    <ul>
+                        <li>Kali Linux
+                            <p>
+                                Def. Debian-based Linux distribution [distro]. Designed for digital forensics and penetration testing. Linux distro is a complete operating system and is based on Linux Kernel. It includes the Linux kernel itself along with a collection of applications, utilities and libraries.<br>
+                                Key components of Linux distro: 
+                                <ul>
+                                    <li>Linux kernel
+                                        <p>
+                                            The core of the OS (managing hardware resources and providing basic services)
+                                        </p>
+                                    </li>
+                                    <li>
+                                        Package management
+                                        <p>
+                                            Tools and systems for installing, updating and managing software packages (e.g. apt- Debian-based distros like <strong>Ubuntu, yum/dnf</strong> for Red Hat based distros like <strong>Fedora</strong>)
+                                        </p>
+                                    </li>
+                                    <li>Desktop environment/windows manager</li>
+                                    <li>Utilities and applications</li>
+                                    <li>Configuration tools</li>
+                                    <li>Documentation and support</li>
+                                    <li>Purpose of Kali Linux
+                                        <p>Nmap, Wireshark & Metasploit</p>
+                                    </li>
+
+                                </ul>
+                            </p>
+                        </li>
+                        <li>WingIDE
+                            <p>
+                                Wing python IDE = [i]ntegrated [d]evelopent [e]nvironment<br>
+                                Offers: advances debugging, editing, testing, and code inspection capabilities.
+                            </p>
+                        </li>
+                        <li>Linux
+                            <p>Open-source operating system [OS]-kernel that forms on the basis of many different <strong>distros</strong>
+                            (Ubuntu/Fedora/Kali Linux).<br>
+                            Known for security, stability, flexibility. Used in servers, desktops and embedded systems.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <input class="expand-btn" type="checkbox">
+            </article>
+        </section>
+        <section id="card-group">
+            <article class="card">
+                <div class="cutoff-text">2. Network Basics
+                    <p>Vocab:
+                        scan for hosts, inject packages, sniff data, remotely exploit hosts, enterprise targets, netcat, wireshark, compiler
+                    </p>
+                    <li>Socket module</li>
+                    <li>Python networking</li>
+                    <li>TCP client (info)</li>
+                    <li>Simple TCP client:
+            <pre><code>
+            import socket
+
+            target_host = "www.google.com"
+            target_port = 80
+
+            client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            client.connect((target_host, target_port))
+            client.send("GET//HTTP/1.1\r\nHost: google.com\r\n\r\n")
+
+            response = client.recv(4096)
+            print response
+            </code></pre>
+                </li>
+            </div>
+            <input class="expand-btn" type="checkbox">
+            </article>
+        </section>
+
+            
+            
+        </section>
+
+        <section id="section2">
+            <h2>Basic info:</h2>
+            <p>How to apply it:</p>
+            <p>CSS in hacking? (ex. disrupting how document is viewed)</p>
+        </section>
+<pre><code>
+import nmap
+
+# Create an Nmap scanner object
+nm = nmap.PortScanner()
+    
+# Scan localhost for ports in the range 20-1024
+nm.scan('127.0.0.1', '20-1024')
+    
+# Print the scan results
+for host in nm.all_hosts():
+    print(f'Host : {host} ({nm[host].hostname()})')
+    print(f'State : {nm[host].state()}')
+    for proto in nm[host].all_protocols():
+        print(f'Protocol : {proto}')
+        lport = nm[host][proto].keys()
+        for port in lport:
+            print(f'Port : {port}\tState : {nm[host][proto][port]["state"]}')
+</code></pre>
+
+passwords:
+Brute force attack
+<pre><code>
+import itertools
+import string
+    
+def brute_force_crack(password):
+    chars = string.ascii_letters + string.digits + string.punctuation
+    attempts = 0
+    for length in range(1, 9):  # Limiting length to 8 for this example
+        for guess in itertools.product(chars, repeat=length):
+            attempts += 1
+            guess = ''.join(guess)
+            if guess == password:
+                return f'Password found: {guess} in {attempts} attempts'
+    return 'Password not found'
+
+password = 'abc123'
+print(brute_force_crack(password))
+</code></pre>
+
+Dictionary attack
+<pre><code>
+def dictionary_attack(password, dictionary_file):
+    with open(dictionary_file, 'r') as file:
+        for line in file:
+            word = line.strip()
+            if word == password:
+                return f'Password found: {word}'
+    return 'Password not found'
+
+# Example dictionary file content (dictionary.txt):
+# password
+# 123456
+# qwerty
+# abc123
+# letmein
+
+password = 'abc123'
+dictionary_file = 'dictionary.txt'
+print(dictionary_attack(password, dictionary_file))
+</code></pre>
+
+hashlib Hash-Based cracking
+<pre><code>
+import hashlib
+
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+def dictionary_attack_hash(hashed_password, dictionary_file):
+    with open(dictionary_file, 'r') as file:
+        for line in file:
+            word = line.strip()
+            if hash_password(word) == hashed_password:
+                return f'Password found: {word}'
+    return 'Password not found'
+
+# Example hashed password
+hashed_password = 'e99a18c428cb38d5f260853678922e03abd833bc6061d6dbeef27c0c0f44f4d0'  # hash for 'abc123'
+dictionary_file = 'dictionary.txt'
+print(dictionary_attack_hash(hashed_password, dictionary_file))
+</code></pre>
+
+
+
+        <!-- <section id="section3">
+            <h2>Elements</h2>
+            <table>
+                <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 70%;">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="table-heading"><strong>Elements:</strong></th>
+                    </tr>
+                    <tr>
+                        <td>color:</td>
+                        <td>Sets the text color</td>
+                    </tr>
+                    <tr>
+                        <td>background-color:</td>
+                        <td>Sets the background color</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="table-heading"><strong>Text Properties:</strong></th>
+                    </tr>
+                    <tr>
+                        <td>font-size:</td>
+                        <td>Sets the size of the font</td>
+                    </tr>
+                    <tr>
+                        <td>font-weight:</td>
+                        <td>Sets the weight (boldness) of the font</td>
+                    </tr>
+                    <tr>
+                        <td>text-align:<br><li>center, left, right</li></i></td>
+                        <td>Sets the horizontal alignment of the text</td>
+                    </tr>
+                    <tr>
+                        <td>border-radius:<br><li>10px 10px 0 0;</li></td>
+                        <td>Sets top corners to rounded edges</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="table-heading"><strong>Box & Border Properties:</strong></th>
+                    </tr>
+                    <tr>
+                        <td>border-radius:<br><li>10px 10px 0 0;</li></td>
+                        <td>Sets top corners to rounded edges</td>
+                    </tr>
+                    <tr>
+                        <td>item:<br><li>0; 10px;</li></td>
+                        <td>exp.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section> -->
+    </main>
+</body>
+</html> 
